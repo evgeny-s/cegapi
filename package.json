@@ -1,0 +1,42 @@
+{
+  "name": "ceg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon ./bin/www --exec 'node_modules/eslint/bin/eslint.js . && node'",
+    "apidoc:generate": "apidoc -i server/ -o docs/",
+    "db:migrate": "node_modules/.bin/sequelize db:migrate",
+    "test": "nyc --reporter=text mocha \"./server/test/**/*.spec.js*\" --timeout 5000 --exit"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "bluebird": "^3.5.3",
+    "body-parser": "^1.18.3",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "express-validator": "^5.3.1",
+    "faker": "^4.1.0",
+    "morgan": "^1.9.1",
+    "pg": "^7.7.1",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^5.8.10",
+    "winston": "^3.1.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.11.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "eslint-watch": "^4.0.2",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.9",
+    "sequelize-cli": "^5.5.0"
+  }
+}
